@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    h2 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+    }
+    .api-key-section {
+      margin-bottom: 16px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #3367d6;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .status {
+      margin-top: 12px;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      display: none;
+    }
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+      display: block;
+    }
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+    .save-btn {
+      background: #34a853;
+      margin-bottom: 12px;
+    }
+    .save-btn:hover {
+      background: #2d8e47;
+    }
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      font-size: 14px;
+      background: white;
+    }
+    .section {
+      margin-bottom: 12px;
+    }
+    .card-section {
+      border-top: 1px solid #eee;
+      padding-top: 12px;
+      margin-top: 12px;
+    }
+    .card-section h3 {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .checkbox-row input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    .checkbox-row label {
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Random Identity Filler</h2>
+  
+  <div class="section">
+    <input type="text" id="apiKey" placeholder="API-Ninjas API Key">
+    <button class="save-btn" id="saveKey">Save API Key</button>
+  </div>
+
+  <div class="section">
+    <select id="region">
+      <option value="">All Regions (Random)</option>
+      <option value="Australia">Australia</option>
+      <option value="Brazil">Brazil</option>
+      <option value="Canada">Canada</option>
+      <option value="France">France</option>
+      <option value="Germany">Germany</option>
+      <option value="India">India</option>
+      <option value="Italy">Italy</option>
+      <option value="Japan">Japan</option>
+      <option value="Netherlands">Netherlands</option>
+      <option value="Spain">Spain</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="United States">United States</option>
+    </select>
+  </div>
+
+  <button id="fillForm">Fill Form with Random Identity</button>
+
+  <div class="section card-section">
+    <h3>Credit Card (Optional)</h3>
+    <div class="checkbox-row">
+      <input type="checkbox" id="enableCard">
+      <label for="enableCard">Generate credit card</label>
+    </div>
+    <input type="text" id="binPrefix" placeholder="BIN prefix (e.g. 5154620022xxxxxx)">
+    <button id="generateCard">Generate & Fill Card Only</button>
+  </div>
+
+  <div id="status" class="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

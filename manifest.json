@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Random Identity Filler",
+  "version": "1.0.0",
+  "description": "Fill forms with random identity from API-Ninjas",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.api-ninjas.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
