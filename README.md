@@ -1,5 +1,5 @@
 # Random Identity Filler - Chrome Extension
-
+(https://github.com/nicemare/RIFiller/blob/main/rif.png)
 Chrome extension to fill forms with random identity data from API-Ninjas.
 
 ## Setup
@@ -53,4 +53,4 @@ Create `icons/` folder with three PNG files (or skip this step):
 ## API
 
 Uses https://api-ninjas.com/api/randomuser endpoint.
-# RIFiller
+
